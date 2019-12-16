@@ -6,7 +6,7 @@ import Hello from "./Hello";
 function App() {
   return (
     <div className="App">
-      <Hello title="some title" />
+      <Hello name="some title" age="23" />
     </div>
   );
 }

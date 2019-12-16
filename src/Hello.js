@@ -1,32 +1,46 @@
 import React, { Component } from "react";
 import "./Hello.css";
-
-class Hello extends Component {
+class Square extends React.Component {
   render() {
+    return <button className="square">{/* TODO */}</button>;
+  }
+}
+
+class Hello extends React.Component {
+
+    state = {
+        [
+            {turn : X}
+        ]
+       
+    }
+  renderSquare(i) {
+    return <Square />;
+  }
+
+  render() {
+    
+
     return (
       <div>
-        <div className="nav-bar">
-          <ul className="nav-bar-ul">
-            <li>
-              <a href="g.com">Home</a>
-            </li>
-            <li>
-              <a href="g.com">Profile</a>
-            </li>
-            <li>
-              <a href="g.com">Notification</a>
-            </li>
-            <li>
-              <a href="g.com">Contact</a>
-            </li>
-            <li>
-              <a href="g.com">About</a>
-            </li>
-          </ul>
+        <div className="status">{this.state.props.turn}</div>
+        <div className="board-row">
+          {this.renderSquare(0)}
+          {this.renderSquare(1)}
+          {this.renderSquare(2)}
+        </div>
+        <div className="board-row">
+          {this.renderSquare(3)}
+          {this.renderSquare(4)}
+          {this.renderSquare(5)}
+        </div>
+        <div className="board-row">
+          {this.renderSquare(6)}
+          {this.renderSquare(7)}
+          {this.renderSquare(8)}
         </div>
       </div>
     );
   }
 }
-
 export default Hello;
